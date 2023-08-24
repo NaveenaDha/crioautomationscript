@@ -28,8 +28,10 @@ WebDriverManager.chromedriver().timeout(30).browserVersion("116.0.5845.0").setup
     public void post() throws InterruptedException{
         System.out.println("Start Test case: Linkedinpost");
         driver.get("https://www.linkedin.com/");
-        driver.findElement(By.id("session_key")).sendKeys("naveena.rajeei@gmail.com");
-		driver.findElement(By.id("session_password")).sendKeys("rani@123");
+	    //Dummy email
+        driver.findElement(By.id("session_key")).sendKeys("username.com");
+	    //dummy password
+		driver.findElement(By.id("session_password")).sendKeys("password@111");
 		driver.findElement(By.xpath("//button[normalize-space()='Sign in']")).click();
         Thread.sleep(3000);
         WebElement who = driver.findElement(By.xpath("(//span/strong)[1]"));
